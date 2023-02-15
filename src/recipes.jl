@@ -109,8 +109,9 @@ end
 @recipe function f(::Type{Val{:vline}}, x, y, z)  # COV_EXCL_LINE
     n = length(y)
     newx = vec(Float64[yi for i in 1:3, yi in y])
+    newy = repeat(Float64[1, 2, NaN], n)
     x := newx
-    y := repeat(Float64[1, 2, NaN], n)
+    y := newy
     seriestype := :straightline
     ()
 end
