@@ -110,8 +110,8 @@ end
     n = length(y)
     newx = vec(Float64[yi for i in 1:3, yi in y])
     newy = repeat(Float64[1, 2, NaN], n)
-    x := newy
-    y := newx
+    x := newx
+    y := newy
     seriestype := :straightline
     ()
 end
