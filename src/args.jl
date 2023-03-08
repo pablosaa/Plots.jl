@@ -1349,7 +1349,7 @@ function preprocess_attributes!(plotattributes::AKW)
     if treats_y_as_x(get(plotattributes, :seriestype, :path))
         xformatter = get(plotattributes, :xformatter, :auto)
         yformatter = get(plotattributes, :yformatter, :auto)
-        yformatter === :auto && (plotattributes[:xformatter] = yformatter)
+        plotattributes[:xformatter] = yformatter # yformatter === :auto || ( )
         xformatter === :auto && (plotattributes[:yformatter] = xformatter)
     end
 
